@@ -6,13 +6,14 @@
 
 # @lc code=start
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        hashset = set()
-        for n in nums:
-            if n in hashset:
-                return True
-            hashset.add(n)
-        return False
-
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prevMap = {}#making value:index dict
+        for i, n in enumerate(nums):
+            diff = target - n 
+            if diff in prevMap:
+                return [prevMap[diff],i]
+            prevMap[n] = i
+        return
+    #making a previous map to hold index of values and returning values that would equal 4
 # @lc code=end
 
